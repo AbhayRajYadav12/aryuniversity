@@ -1,0 +1,20 @@
+{
+  "name": "university-digital-library",
+  "version": "1.0.0",
+  "private": true,
+  "description": "University Digital Library with DRM-based PDF encryption — database-free local demo",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,client -c blue,green \"npm run dev -w server\" \"npm run dev -w client\"",
+    "seed": "npm run seed -w server",
+    "security-test": "npm run security-test -w server",
+    "start": "npm run start -w server",
+    "build": "npm run build -w client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
